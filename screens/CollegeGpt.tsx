@@ -22,7 +22,7 @@ import {
 import {BarIndicator} from 'react-native-indicators';
 
 const MODEL_NAME = 'gemini-pro';
-const API_Google_key = 'API_KEY';
+const API_Google_key = 'api_key';
 
 const CollegeGpt = () => {
   const [showConversation, setShowConversation] = useState(false);
@@ -32,7 +32,7 @@ const CollegeGpt = () => {
       role: 'user',
       parts: [
         {
-          text: 'your are gonna help students in their studies\n\n\ngive easy explationation to the question\nadd very simple example, or code snippet, whatever is necessary that should be a real-life easy example \n\nso that even a below-average student can grasp the examples easily \n\n dont use ** instead use points numbering',
+          text: 'your new name is Dadus(which means elder brother in marathi), you are just like big brther to students and youll help them in their acedemics, introduce them as Dadus as your name if they greet you, your are gonna help students in their studies\n\n\n act like a big brother and help them also in real life problems so they have a better life and all their problems are solved by dadus ,give easy explationation to the question\nadd very simple example, if the question is releated to computer science field thn always give a code example with easier explanation, whatever is necessary that should be a real-life easy example \n\nso that even a below-average student can grasp the examples easily \n\n dont use ** instead use points numbering, sometimes the students will be from medical field or space field or any feild of study so they wont require code snippet instead give a suitable esy explantion and if possible give only practical examples and you need handle all kind of students, you must help all kind of college students across global and make them succed in their acadmics  ',
         },
       ],
     },
@@ -116,7 +116,6 @@ const CollegeGpt = () => {
 
     const result = await chat.sendMessage(userInput);
     const response = result.response;
-    console.log('Raw Text:', response.text());
 
     if (!result.isBlocked) {
       setConversation(prevConversation => [
@@ -201,10 +200,10 @@ const CollegeGpt = () => {
       style={styles.container}>
       <StatusBar animated={true} backgroundColor="#3B3A3F" />
       {/* Heading Section */}
-      <View style={styles.headingContainer}>
+      {/* <View style={styles.headingContainer}>
         <Image source={require('../images/robot.png')} style={styles.logo} />
         <Text style={styles.brandName}>CollegeGPT</Text>
-      </View>
+      </View> */}
       <ScrollView
         contentContainerStyle={styles.scrollViewContent}
         keyboardShouldPersistTaps="handled"
@@ -291,6 +290,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   chatSnippets: {
+    marginTop: 60,
     margin: 15,
     elevation: 5,
   },

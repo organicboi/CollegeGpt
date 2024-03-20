@@ -22,7 +22,7 @@ import {
 import {BarIndicator} from 'react-native-indicators';
 
 const MODEL_NAME = 'gemini-pro';
-const API_Google_key = 'AIzaSyDNLV9nkXim8-JJSepGxbVPpz0uwsOEUi4';
+const API_Google_key = 'API_KEY';
 
 const CollegeGpt = () => {
   const [showConversation, setShowConversation] = useState(false);

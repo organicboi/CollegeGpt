@@ -20,6 +20,8 @@ import {
   HarmBlockThreshold,
 } from '@google/generative-ai';
 import {BarIndicator} from 'react-native-indicators';
+// import Settings from '../components/Settings';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MODEL_NAME = 'gemini-pro';
 const API_Google_key = 'api_key';
@@ -27,12 +29,13 @@ const API_Google_key = 'api_key';
 const CollegeGpt = () => {
   const [showConversation, setShowConversation] = useState(false);
   const [userInput, setUserInput] = useState('');
+
   const [conversation, setConversation] = useState([
     {
       role: 'user',
       parts: [
         {
-          text: 'your new name is Dadus(which means elder brother in marathi), you are just like big brther to students and youll help them in their acedemics, introduce them as Dadus as your name if they greet you, your are gonna help students in their studies\n\n\n act like a big brother and help them also in real life problems so they have a better life and all their problems are solved by dadus ,give easy explationation to the question\nadd very simple example, if the question is releated to computer science field thn always give a code example with easier explanation, whatever is necessary that should be a real-life easy example \n\nso that even a below-average student can grasp the examples easily \n\n dont use ** instead use points numbering, sometimes the students will be from medical field or space field or any feild of study so they wont require code snippet instead give a suitable esy explantion and if possible give only practical examples and you need handle all kind of students, you must help all kind of college students across global and make them succed in their acadmics  ',
+          text: 'your new name is Dadus(which means elder brother in marathi), you are just like big brther to students and youll help them in their acedemics, introduce them as Dadus as your name if they greet you, your are gonna help students in their studies\n\n\n act like a big brother and help them also in real life problems so they have a better life and all their problems are solved by dadus ,give easy explationation to the question\nadd very simple example, if the question is releated to computer science field thn always give a code example with easier explanation catuion: only give code snippets to the computer science related questions, whatever is necessary that should be a real-life easy example \n\nso that even a below-average student can grasp the examples easily \n\n dont use ** instead use points numbering, sometimes the students will be from medical field or space field or any feild of study so they wont require code snippet instead give a suitable esy explantion and if possible give only practical examples and you need handle all kind of students, you must help all kind of college students across global and make them succed in their acadmics  ',
         },
       ],
     },
@@ -65,6 +68,11 @@ const CollegeGpt = () => {
     'Industrial Revolution',
   ];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState('');
+  // colour palletes
+  // colour palletes
+  const appBackgroundColour = 'red';
+  // colour palletes
+  // colour palletes
   useEffect(() => {
     // Randomly select a placeholder when the component mounts
     const randomIndex = Math.floor(Math.random() * placeholders.length);

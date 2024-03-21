@@ -14,7 +14,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import CollegeGpt from './screens/CollegeGpt';
 import VertexAI from './components/VertexAI';
 import CustomHeaderMenu from './components/CustomHeaderMenu';
-import {Ionicons} from '@expo/vector-icons';
+import Settings from './components/Settings';
+import Retrive from './components/Retrive';
 
 const Drawer = createDrawerNavigator();
 
@@ -90,6 +91,8 @@ const App = () => {
           }}
         />
         <Drawer.Screen name="VertexAI" component={VertexAI} />
+        <Drawer.Screen name="Settings" component={Settings} />
+        <Drawer.Screen name="Retrive" component={Retrive} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
